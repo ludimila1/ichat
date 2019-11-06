@@ -1,0 +1,144 @@
+<html>
+</head>
+<script type="text/javascript" src="js/materialize.min.js"></script>            
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../imagens/logo.png">
+<link rel="stylesheet" type="text/css" href="../css/_css.css">
+<title> Ichat </title>
+	<script type="text/javascript">
+			function validar(){
+				var senha = formuser.senha.value;
+				var email= formuser.email.value;
+				var rep_senha = formuser.rep_senha.value;
+				var nome = formuser.nome.value;
+				var pais = formuser.pais.value;
+				var idioma = formuser.idioma.value;
+				if(nome == "" || nome.lenght < 3) {
+					alert("Por favor, indique o seu nome.");
+					formuser.nome.focus();
+					return false;
+				}
+				if(pais == "") {
+					alert("Por favor, indique o seu país.");
+					formuser.pais.focus();
+					return false;
+				}
+				if(idioma == "" || idioma.lenght < 3) {
+					alert("Por favor, indique o seu idioma.");
+					formuser.idioma.focus();
+					return false;
+				}
+				if(senha == "" || senha.length <= 5){
+					alert('Preencha o campo senha com minimo 6 caracteres');
+					formuser.senha.focus();
+					return false;
+				}
+				
+				if(rep_senha == "" || rep_senha.length <= 5){
+					alert('Preencha o campo confirme senha com minimo 6 caracteres');
+					formuser.rep_senha.focus();
+					return false;
+				}
+				
+				if (senha != rep_senha) {
+					alert('Senhas diferentes');
+					formuser.senha.focus();
+					return false;
+				}
+				if( (e-mail.indexOf("@")==-1)||(e-mail=="")(e-mail.indexOf(".")==-1)){
+					alert("Preecha o campo Email, por favor.");
+					return false;
+				}
+				
+				
+			}
+		</script>
+</head>
+<body>
+	<div id="menu">
+			<nav  style="background-color:#71a5a8;">
+					<div class="nav-wrapper">
+					  <a href="#" class="brand-logo right">
+						
+					  <ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li><a href="../index.html" class="text-white">INÍCIO</a></li>&nbsp;&nbsp;&nbsp;
+					<li><a href="bate_papo.html" class="text-white">BATE PAPO</a> </li>&nbsp;&nbsp;&nbsp;
+					<li><a href="cadastro.html"  class="text-white"  id="fonte_mais_branca">CADASTRO</a> </li>&nbsp;&nbsp;&nbsp;
+					<li><a href="login.html" class="text-white">LOGIN</a></li>						
+				</ul>
+				
+			</nav>
+			<br><br>
+		</div>
+	<div class="row">
+		<div class="col s12 m4 offset-m4">
+			<div class="card">
+				<div class= "card-action cyan darken-1 white-text">
+					<h3>Cadastro <h3>
+				</div>
+			
+			<div class="card-content">
+			<form name="formuser" action="#" method="POST">
+				<div class="form-field">
+					<label for="password">Nome:</label>
+					<input type="text" id="nome" placeholder=" nome" name="nome"/>
+				</div><br>
+				
+				<div class="form-field">
+					<label for="password">País:</label>
+					<input type="text" id="pais" placeholder=" país" name="pais"/>
+				</div><br>
+				
+				<div class="form-field">
+					<label for="password">Idioma:</label>
+					<input type="text" id="idioma" placeholder=" idioma" name="idioma"/>
+				</div><br>
+				
+				<div class="form-field">
+					<label for="email">E-mail:</label>
+					<input type="email" id="email" placeholder=" nome@email.com" name="email"/>
+				</div><br>
+				
+				<div class="form-field">
+					<label for="password">Senha:</label>
+					<input type="password" id="password" placeholder=" senha" name="senha"/>
+				</div><br>
+				
+				<div class="form-field">
+					<label for="password"> Confirme Senha:</label>
+					<input type="password" id="password" placeholder=" senha" name="rep_senha"/>
+				</div><br>
+				<div class="form-field">
+					<button class="btn-large waves-effect waves-dark" style="wighth:100%" type="submit" onclick="return validar()">Cadastrar</button>
+				</div><br>
+			</form>
+			</div>
+		</div>
+		<div style align="center"><a href="../index.html">Voltar para a página principal</a></div>
+	</div>
+	</div>
+	<div style="margin-top:10%">
+			<footer class="footer mt-auto py-3"style="background-color:#7ebbbf; opacity:0.8">
+				<div class="container" style="color:gray">
+				<div style="margin-left:20%;" id="rodape_esquerdo">
+					© 2019 - <script>
+					var mydate=new Date()
+					var year=mydate.getYear()
+					if (year < 1000)
+						year+=1900
+					document.write(""+year+"")
+					</script></br>
+					Ichat: você falando com o mundo!</br>
+				</div>
+				<div style="margin-left:60%;">
+					Contate-nos:</br>
+					(77)3452-1924</br>
+					ichat.nao@gmail.com
+				</div>
+				</div>
+			</footer>
+		</div>
+	</body>	
+</html>
