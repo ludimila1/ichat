@@ -6,7 +6,6 @@ site = Flask(__name__)
 def index():
     return render_template("index.html")
 
-
 @site.route("/batepapo")
 def batepapo():
     return render_template("paginas/bate_papo.html")
@@ -23,8 +22,8 @@ def login():
 
     
 
-
-site.run(debug=True)
+if (__name__== "__main__"):
+    site.run(debug=True, port=5001)
 
 
 
