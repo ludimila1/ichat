@@ -1,6 +1,8 @@
 from flask import Flask, render_template
+from formulario import CadastroForm
 
 app=Flask(__name__)
+app.config['SECRET_KEY'] = 'lsrhvanlvlqtaçcojgq'
 
 @app.route("/index")
 def index():
@@ -12,7 +14,11 @@ def batepapo():
 
 @app.route("/cadastro")
 def cadastro():
-    return render_template("paginas/cadastro.html")
+    formulario=CadastroForm()
+    return render_template(
+        "paginas/cadastro.html", 
+        form=formulario
+        )
 
 @app.route("/login")
 def login():
