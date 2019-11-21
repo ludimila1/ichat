@@ -1,51 +1,35 @@
 {% extends 'paginas/base.html' %}
 {% block content %}
-<!--
+
+<body>
+	<div id="menu">
+			
+			<br><br>
+		</div>
 	<div class="row">
 		<div class="col s12 m4 offset-m4">
 			<div class="card">
 				<div class= "card-action cyan darken-1 white-text">
-					<h3>Login <h3>
+					<h3 style align="center">Login </h3>
 				</div>
+			
 			<div class="card-content">
+
 			<form name="formuser" action="#" method="POST">
-				<div class="form-field">
-					<label for="email">E-mail:</label>
-					<input type="email" id="email" placeholder=" nome@email.com" name="email"/>
-				</div><br>
-				
-				<div class="form-field">
-					<label for="password">Senha:</label>
-					<input type="password" id="password" placeholder=" senha" name="senha"/>
-				</div><br>
-				
-				<div class="form-field">
-					<button class="btn-large waves-effect waves-dark" style="wighth:100%" type="submit" onclick="return validar()">Login</button>
-				</div><br>
+					<div class="form-field">	
+					{{form.usuario.label}}
+					{{form.usuario}}
+
+					{{form.senha.label}}
+					{{form.senha}}
+					<button class="btn-large waves-effect waves-dark" style="width:100%" type="submit" onclick="return validar()">Entrar</button>
+					
+					</div><br>
 			</form>
 			</div>
-		</div>
-		<div style align="center"><a href="/index">Voltar para a página principal</a></div>
-		</div>
-	</div>
-	<div style="margin-top:10%">
-		
-	</div>
-	<script type="text/javascript">
-		function validar(){
-			var senha = formuser.senha.value;
-			var email= formuser.email.value;
-			if((senha == "" )|| (senha.length <= 5)){
-				alert('Preencha o campo senha com minimo 6 caracteres');
-				formuser.senha.focus();
-				return false;
-			}
-			if( (e-mail.indexOf("@")==-1)||(e-mail=="")(e-mail.indexOf(".")==-1)){
-				alert("Preecha o campo Email, por favor.");
-				return false;
-			}
-			
-		}
-	</script>
-	-->
+			</div>
+			</div>
+		    </div>
+
+</body>
 {% endblock %}
