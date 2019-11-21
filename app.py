@@ -8,12 +8,15 @@ app=Flask(__name__)
 app.config['SECRET_KEY'] = 'lsrhvanlvlqtaçcojgq'
 db=SQLAlchemy(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cadastro.db'
-
+#db.create_all()
 class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     usuario = db.Column(db.Text, nullable=False)
     senha = db.Column(db.Text, nullable=False)
     email = db.Column(db.Text, nullable=False)
+
+    def __repr__(self):
+        return "usuario: %r" % self.usuario
 
 @app.route("/index")
 def index():
@@ -27,10 +30,12 @@ def batepapo():
 def cadastro():
     formulario=CadastroForm()
     if formulario.validate_on_submit():
-        print (formulario.email.data)
-        print (formulario.name.data)
-        print (formulario.senha.data)
-        print (formulario.confirme.data)
+        u=Usuario()
+        u.usuario=formulario.name.data
+        u.email = formulario.email.data
+        u.senha = formulario.senha.data
+        db.session.add(u)
+        db.sessoin.commit()
 
     return render_template("paginas/cadastro.html", form=formulario)
 
