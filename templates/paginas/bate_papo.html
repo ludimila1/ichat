@@ -1,4 +1,28 @@
 {% extends 'paginas/base.html' %}
 {% block content %}
+    <form method="POST">
+        {{form.hidden_tag()}}
+        {{form.texto.label}}
+        {{form.texto}}
+        {{form.botao}}
+
+    </form>
+
+    <h3>Mensagens:</h3>
+    <div class="row">
+        {% for mensagem in mensagens[::-1] %}
+        <div class="col l6 s12 m5">
+          <div class="card-panel teal">
+            <span class="white-text">
+               
+                    {{ mensagem.texto  }}
+                   <br>
+                   {{ mensagem.usuario_id }}
+               
+            </span>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}		
