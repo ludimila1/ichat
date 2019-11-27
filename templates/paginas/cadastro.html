@@ -16,8 +16,10 @@
 			
 			<div class="card-content">
 
-			<form name="formuser" action="#" method="POST">
-					<div class="form-field">	
+			<form method="POST">
+					<div class="form-field">
+							{{ form.csrf_token }}
+							{{ form.hidden_tag() }}
 					{{form.usuario.label}}
 					{{form.usuario}}
 
@@ -37,10 +39,8 @@
 					{{form.senha.label}}
 					{{form.senha}}
 
-					{{form.confirme.label}}
-					{{form.confirme}}
-
-					<button class="btn-large waves-effect waves-dark" style="width:100%" type="submit" onclick="return validar()">Cadastrar</button>
+					{{form.botao}}
+					<!-- <button class="btn-large waves-effect waves-dark" style="width:100%" type="submit" onclick="return validar()">Cadastrar</button> -->
 					
 					</div><br>
 			</form>
