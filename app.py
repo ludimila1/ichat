@@ -59,18 +59,7 @@ def cadastro():
         db.session.add(user1)
         db.session.commit()
 
-    '''
-    formulario=CadastroForm()
-    print(formulario.data)
-    print(formulario.validate_on_submit())
-    #if formulario.validate_on_submit():
-    u=Usuario()
-    u.usuario=formulario.usuario.data
-    u.email = formulario.email.data
-    u.senha = formulario.senha.data
-    db.session.add(u)
-    db.session.commit()
-    '''
+  
     return render_template("paginas/cadastro.html", form=form)
 
 @app.route("/login", methods=["GET", "POST"])
