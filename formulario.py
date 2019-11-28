@@ -16,6 +16,6 @@ class LoginForm(FlaskForm):
     botao = SubmitField('Enviar')
  
 class MensagemForm(FlaskForm):
-    texto = TextField('Sua msg', [DataRequired()]) #, EqualTo('confirm', message='Senhas diferentes')])
+    texto = TextField('Escreva sua mensagem:', [DataRequired()]) #, EqualTo('confirm', message='Senhas diferentes')])
     botao = SubmitField('Enviar')
 
