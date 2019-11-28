@@ -1,14 +1,15 @@
 {% extends 'paginas/base.html' %}
-{% block content %}
-    <form method="POST">
+{% block content %}</br>
+    <form method="POST" style="margin-left: 0.66%">
         {{form.hidden_tag()}}
         {{form.texto.label}}
         {{form.texto}}
+        <a class="waves-effect waves-light btn">
         {{form.botao}}
-
+          </a>
     </form>
 
-    <h3>Mensagens:</h3>
+    <h3 style="margin-left: 0.66%; color:gray">Publicações:</h3>
     <div class="row">
         {% for mensagem in mensagens[::-1] %}
         <div class="col l6 s12 m5">
