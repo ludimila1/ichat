@@ -5,3 +5,13 @@
 	float:left;
 }
 
+.body  {
+	text-align: center;
+	background-image: url("img.jpeg");
+	background-color: #8ecbbd;
+    height: 78%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+  }
