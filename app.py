@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template
 from formulario import CadastroForm, MensagemForm
 
 from formulario import LoginForm
@@ -39,7 +39,7 @@ def batepapo():
     if form.validate_on_submit():
         msg = Mensagem()
         msg.texto = form.texto.data
-        msg.usuario_id = "@aqui_vai_mudar"
+        msg.usuario_id = "usuario"
         db.session.add(msg)
         db.session.commit()
     
@@ -59,7 +59,6 @@ def cadastro():
         db.session.add(user1)
         db.session.commit()
 
-  
     return render_template("paginas/cadastro.html", form=form)
 
 @app.route("/login", methods=["GET", "POST"])
